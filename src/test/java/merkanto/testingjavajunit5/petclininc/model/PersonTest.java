@@ -1,10 +1,10 @@
 package merkanto.testingjavajunit5.petclininc.model;
 
 import merkanto.testingjavajunit5.petclininc.ModelTests;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PersonTest implements ModelTests {
 

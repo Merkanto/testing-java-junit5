@@ -1,7 +1,10 @@
 package merkanto.testingjavajunit5.petclininc.controllers;
 
 import merkanto.testingjavajunit5.petclininc.ControllerTests;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
@@ -33,7 +36,7 @@ class IndexControllerTest implements ControllerTests {
     @DisplayName("Test exception")
     void oupsHandler() {
         assertThrows(ValueNotFoundException.class, () -> {
-           controller.oopsHandler();
+            controller.oopsHandler();
         });
     }
 

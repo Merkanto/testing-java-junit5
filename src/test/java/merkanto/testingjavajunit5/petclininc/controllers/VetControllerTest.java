@@ -1,5 +1,6 @@
 package merkanto.testingjavajunit5.petclininc.controllers;
 
+import merkanto.testingjavajunit5.petclininc.ControllerTests;
 import merkanto.testingjavajunit5.petclininc.fauxspring.Model;
 import merkanto.testingjavajunit5.petclininc.fauxspring.ModelMapImpl;
 import merkanto.testingjavajunit5.petclininc.model.Vet;
@@ -15,7 +16,7 @@ import java.util.Set;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class VetControllerTest {
+class VetControllerTest implements ControllerTests {
 
     VetService vetService;
     SpecialtyService specialtyService;

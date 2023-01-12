@@ -1,5 +1,6 @@
 package merkanto.testingjavajunit5.petclininc.model;
 
+import merkanto.testingjavajunit5.petclininc.CustomArgsProvider;
 import merkanto.testingjavajunit5.petclininc.ModelTests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -77,5 +78,12 @@ class OwnerTest implements ModelTests {
                 Arguments.of("FL", 1, 1),
                 Arguments.of("OH", 2, 2),
                 Arguments.of("MI", 3, 5));
+    }
+
+    @DisplayName("Custom Provider Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] {argumentsWithNames}")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void fromCustomProviderTest(String stateName, int val1, int val2) {
+        System.out.println(stateName + " = " + val1 + ":" + val2);
     }
 }

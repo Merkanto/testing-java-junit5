@@ -22,12 +22,14 @@ class IndexControllerTest implements ControllerTests {
         controller = new IndexController();
     }
 
-    @Test
     @DisplayName("Test Proper View name is returned for index page")
+    @Test
     void index() {
         assertEquals("index", controller.index());
         assertEquals("index", controller.index(), "Wrong View Returned");
-        assertEquals("index", controller.index(), () -> "Another Expensive Message Make me only if you have to");
+
+        assertEquals("index", controller.index(), () -> "Another Expensive Message " +
+                "Make me only if you have to");
 
         assertThat(controller.index()).isEqualTo("index");
     }
@@ -42,7 +44,8 @@ class IndexControllerTest implements ControllerTests {
 
     @Disabled("Demo of timeout")
     @Test
-    void testTimeout() {
+    void testTimeOut() {
+
         assertTimeout(Duration.ofMillis(100), () -> {
             Thread.sleep(5000);
 
@@ -52,22 +55,25 @@ class IndexControllerTest implements ControllerTests {
 
     @Disabled("Demo of timeout")
     @Test
-    void testTimeoutPrompt() {
+    void testTimeOutPrempt() {
+
         assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
             Thread.sleep(5000);
 
-            System.out.println("I got here 234123123123123");
+            System.out.println("I got here 2342342342342");
         });
     }
 
     @Test
     void testAssumptionTrue() {
-        assumeTrue("IVAN".equalsIgnoreCase(System.getenv("IVAN_RUNTIME")));
+
+        assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
     }
 
     @Test
     void testAssumptionTrueAssumptionIsTrue() {
-        assumeTrue("IVAN".equalsIgnoreCase("IVAN"));
+
+        assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
 
     @EnabledOnOs(OS.MAC)
@@ -90,12 +96,12 @@ class IndexControllerTest implements ControllerTests {
     void testMeOnJava11() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "Merkanto")
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "jt")
     @Test
     void testIfUserJT() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "joro")
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "fred")
     @Test
     void testIfUserFred() {
     }

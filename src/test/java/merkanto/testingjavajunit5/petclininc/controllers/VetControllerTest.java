@@ -29,11 +29,11 @@ class VetControllerTest implements ControllerTests {
 
         vetController = new VetController(vetService);
 
-        Vet vet = new Vet(1L, "Joe", "Bucks", null);
-        Vet vet1 = new Vet(2L, "Jimmy", "Smith", null);
+        Vet vet1 = new Vet(1L, "joe", "buck", null);
+        Vet vet2 = new Vet(2L, "Jimmy", "Smith", null);
 
-        vetService.save(vet);
         vetService.save(vet1);
+        vetService.save(vet2);
     }
 
     @Test

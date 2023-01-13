@@ -10,41 +10,23 @@ class PersonTest implements ModelTests {
 
     @Test
     void groupedAssertions() {
-        // given
-        Person person = new Person(1L, "Miro", "Zhelezchev");
+        //given
+        Person person = new Person(1L, "Joe", "Buck");
 
         //then
         assertAll("Test Props Set",
-                () -> assertEquals(person.getFirstName(), "Miro"),
-                () -> assertEquals(person.getLastName(), "Zhelezchev"));
+                () -> assertEquals(person.getFirstName(), "Joe"),
+                () -> assertEquals(person.getLastName(), "Buck"));
     }
 
     @Test
-    void groupedAssertionsMsgs() {
-        // given
-        Person person = new Person(1L, "Miro", "Zhelezchev");
+    void groupedAssertionMsgs() {
+        //given
+        Person person = new Person(1L, "Joe", "Buck");
 
         //then
         assertAll("Test Props Set",
-                () -> assertEquals(person.getFirstName(), "Miro", "First name failed"),
-                () -> assertEquals(person.getLastName(), "Zhelezchev", "Last name failed"));
-    }
-
-    @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition} - {totalRepetitions}")
-    @DisplayName("My Repeated Test")
-    void myRepeatedTest() {
-        //todo - impl
-    }
-
-    @RepeatedTest(5)
-    void myRepeatedTestWithOI(TestInfo testInfo, RepetitionInfo repetitionInfo) {
-        System.out.println(testInfo.getDisplayName() + ": " + repetitionInfo.getCurrentRepetition());
-    }
-
-    @RepeatedTest(value = 5, name = "{displayName} : {currentRepetition} | {totalRepetitions}")
-    @DisplayName("My Assignment Repeated Test")
-    @Test
-    void myAssignmentRepeated() {
-        //todo impl
+                () -> assertEquals(person.getFirstName(), "Joe", "First Name Failed"),
+                () -> assertEquals(person.getLastName(), "Buck", "Last Name Failed"));
     }
 }

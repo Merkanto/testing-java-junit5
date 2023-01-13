@@ -1,0 +1,1 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Merkanto/testing-java-junit5/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Merkanto/testing-java-junit5/tree/master)
